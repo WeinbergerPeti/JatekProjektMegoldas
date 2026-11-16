@@ -178,7 +178,10 @@ namespace JatekProjekt
         // Gyűjtsd ki az összes "Harcos" osztályú karakter azonosítóját (Id) egy listába!
         public List<int> HarcosokAzonositoi()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .Where(k => k.Osztaly == "Harcos")
+                .Select(k => k.Id)
+                .ToList();
         }
 
         // Állapítsd meg, hogy van-e olyan 50-es szintnél magasabb Mágus, akinek 3000-nél kevesebb aranya van!
