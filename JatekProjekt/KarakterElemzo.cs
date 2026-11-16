@@ -55,7 +55,7 @@ namespace JatekProjekt
         public List<string> EgyediSzerverNevek()
         {
             return karakterek
-                .Select(k=> k.Nev)
+                .Select(k => k.Nev)
                 .Distinct()
                 .ToList();
         }
@@ -68,7 +68,8 @@ namespace JatekProjekt
         // Számold meg Sum segítségével, hogy mennyi a karakterek összes aranya a szerveren!
         public int OsszesAranyMennyiseg()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .Sum(k => k.Arany);
         }
 
         // Számítsd ki Average segítségével a karakterek átlagos szintjét double értékként!
