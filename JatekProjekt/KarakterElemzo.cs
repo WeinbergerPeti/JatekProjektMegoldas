@@ -192,10 +192,11 @@ namespace JatekProjekt
         }
 
         // Keresd meg és add vissza a legmagasabb szintű karakter objektumát!
-        public Karakter LegmagasabbSzintuKarakterObjektum()
+        public Karakter? LegmagasabbSzintuKarakterObjektum()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .OrderByDescending(k=>k.Szint)
+                .FirstOrDefault();
         }
-
     }
 }
