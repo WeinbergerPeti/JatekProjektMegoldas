@@ -127,7 +127,7 @@ namespace JatekProjekt
         public string? LegszegenyebbKarakterNeve()
         {
             return karakterek
-                .OrderBy(k=> k.Arany)
+                .OrderBy(k => k.Arany)
                 .FirstOrDefault()?.Nev;
         }
 
@@ -141,7 +141,9 @@ namespace JatekProjekt
         // Rendezd a karaktereket a nevük hossza szerint növekvő sorrendbe!
         public List<Karakter> KarakterekNevHosszaSzerint()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .OrderBy(k => k.Nev.Length)
+                .ToList();
         }
 
 
@@ -152,7 +154,17 @@ namespace JatekProjekt
         // Csoportosítsd a karaktereket az Osztaly tulajdonságuk alapján, és alakítsd át ToDictionary-vel úgy, hogy a kulcs az osztály neve, az érték pedig a karakterek darabszáma legyen!
         public Dictionary<string, int> OsztalyonkentKarakterSzam()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .GroupBy(g => g.Osztaly)
+                .ToDictionary(k => k.Key, k => k.Count());
+            
+            //.Select(k => new
+            //{
+            //    Osztaly = k.Key,
+            //    Ertek = k.Count()
+            //})
+            //.ToDictionary(k => k.Osztaly, k => k.Ertek);
+
         }
 
         // Csoportosítsd a karaktereket a Szerver tulajdonságuk alapján, és számold meg, hány karakter játszik az egyes szervereken!
