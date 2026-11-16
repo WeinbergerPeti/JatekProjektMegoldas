@@ -45,7 +45,10 @@ namespace JatekProjekt
         // Szűrd ki azokat a karaktereket, amelyek valamelyik "EU-"-val kezdődő szerveren játszanak, és add vissza a nevüket listában!
         public List<string> EuSzerveresKarakterek()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .Where(k => k.Szerver.Contains("EU"))
+                .Select(k => k.Nev)
+                .ToList();
         }
 
         // Válaszd ki az összes egyedi (különböző) szervernevet, ahol a karakterek játszanak (Distinct segítségével)!
