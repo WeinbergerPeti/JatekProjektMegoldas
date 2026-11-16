@@ -75,7 +75,8 @@ namespace JatekProjekt
         // Számítsd ki Average segítségével a karakterek átlagos szintjét double értékként!
         public double AtlagSzint()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .Average(k => k.Szint);
         }
 
         // Állapítsd meg Any segítségével, hogy van-e olyan "Tolvaj" osztályú karakter, akinek a szintje eléri vagy meghaladja a 40-et!
