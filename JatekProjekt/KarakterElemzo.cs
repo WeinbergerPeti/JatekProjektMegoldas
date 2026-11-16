@@ -20,15 +20,18 @@ namespace JatekProjekt
         public List<string> MagasSzintuKarakterek()
         {
             return karakterek
-                .Where(k=>k.Szint>70)
-                .Select(k=> k.Nev)
+                .Where(k => k.Szint > 70)
+                .Select(k => k.Nev)
                 .ToList();
         }
 
         // Gyűjtsd ki az összes "Mágus" osztályú karakter nevét!
         public List<string> MagusOsztalyuNevek()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .Where(k => k.Osztaly == "Mágus")
+                .Select(k => k.Nev)
+                .ToList();
         }
 
         // Add vissza az összes karakter nevét egy egyszerű listában!
