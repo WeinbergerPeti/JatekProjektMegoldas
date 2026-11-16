@@ -94,9 +94,10 @@ namespace JatekProjekt
         }
 
         // Keresd meg FirstOrDefault segítségével az első olyan karaktert, akinek az aranya meghaladja az 5000-et!
-        public Karakter LegelsoOvenKarakter()
+        public Karakter? LegelsoOvenKarakter()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .FirstOrDefault(k => k.Arany > 5000);
         }
 
 
