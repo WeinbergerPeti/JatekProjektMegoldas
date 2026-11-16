@@ -124,9 +124,11 @@ namespace JatekProjekt
         }
 
         // Keresd meg OrderBy és FirstOrDefault segítségével a legszegényebb (legkevesebb aranyú) karakter nevét!
-        public string LegszegenyebbKarakterNeve()
+        public string? LegszegenyebbKarakterNeve()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .OrderBy(k=> k.Arany)
+                .FirstOrDefault()?.Nev;
         }
 
         // Keresd meg Max segítségével a legmagasabb szintű karakter szintjét!
