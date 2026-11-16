@@ -55,7 +55,7 @@ namespace JatekProjekt
         public List<string> EgyediSzerverNevek()
         {
             return karakterek
-                .Select(k => k.Nev)
+                .Select(k => k.Szerver)
                 .Distinct()
                 .ToList();
         }
