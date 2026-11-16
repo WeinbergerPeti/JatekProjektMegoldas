@@ -170,7 +170,9 @@ namespace JatekProjekt
         // Csoportosítsd a karaktereket a Szerver tulajdonságuk alapján, és számold meg, hány karakter játszik az egyes szervereken!
         public Dictionary<string, int> SzerverenKarakterekSzama()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .GroupBy(g => g.Szerver)
+                .ToDictionary(k => k.Key, k => k.Count());
         }
 
         // Gyűjtsd ki az összes "Harcos" osztályú karakter azonosítóját (Id) egy listába!
