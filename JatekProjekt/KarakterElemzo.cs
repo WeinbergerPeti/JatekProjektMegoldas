@@ -37,7 +37,9 @@ namespace JatekProjekt
         // Add vissza az összes karakter nevét egy egyszerű listában!
         public List<string> OsszesKarakterNevListaba()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .Select(k => k.Nev)
+                .ToList();
         }
 
         // Szűrd ki azokat a karaktereket, amelyek valamelyik "EU-"-val kezdődő szerveren játszanak, és add vissza a nevüket listában!
