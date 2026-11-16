@@ -54,7 +54,10 @@ namespace JatekProjekt
         // Válaszd ki az összes egyedi (különböző) szervernevet, ahol a karakterek játszanak (Distinct segítségével)!
         public List<string> EgyediSzerverNevek()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .Select(k=> k.Nev)
+                .Distinct()
+                .ToList();
         }
 
 
