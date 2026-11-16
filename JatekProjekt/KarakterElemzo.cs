@@ -157,7 +157,7 @@ namespace JatekProjekt
             return karakterek
                 .GroupBy(g => g.Osztaly)
                 .ToDictionary(k => k.Key, k => k.Count());
-            
+
             //.Select(k => new
             //{
             //    Osztaly = k.Key,
@@ -187,7 +187,8 @@ namespace JatekProjekt
         // Állapítsd meg, hogy van-e olyan 50-es szintnél magasabb Mágus, akinek 3000-nél kevesebb aranya van!
         public bool VanETolvajSpecKondicioval()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .Any(k => k.Szint > 50 && k.Osztaly == "Mágus" && k.Arany < 3000);
         }
 
         // Keresd meg és add vissza a legmagasabb szintű karakter objektumát!
