@@ -116,9 +116,11 @@ namespace JatekProjekt
         }
 
         // Keresd meg OrderByDescending és FirstOrDefault segítségével annak a karakternek a nevét, akinek a legtöbb aranya van!
-        public string LeggazdagabbKarakterNeve()
+        public string? LeggazdagabbKarakterNeve()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .OrderByDescending(k => k.Arany)
+                .FirstOrDefault()?.Nev;
         }
 
         // Keresd meg OrderBy és FirstOrDefault segítségével a legszegényebb (legkevesebb aranyú) karakter nevét!
