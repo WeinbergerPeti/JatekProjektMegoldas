@@ -134,7 +134,8 @@ namespace JatekProjekt
         // Keresd meg Max segítségével a legmagasabb szintű karakter szintjét!
         public int LegmagasabbSzint()
         {
-            throw new NotImplementedException();
+            return karakterek
+                .Max(k => k.Szint);
         }
 
         // Rendezd a karaktereket a nevük hossza szerint növekvő sorrendbe!
